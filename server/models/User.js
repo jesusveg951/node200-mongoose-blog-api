@@ -11,14 +11,7 @@ const UserSchema = new Schema({
         twitter: { type: String, required: false },
         linkedIn: { type: String, required: false }
     },
-
-    blog: {
-        title: {type: String, require: true},
-        article: {type: String, require: true},
-        published: {type: String, require: true},
-        featured: {type: String, require: true},
-        author: {type: String, require: true}
-    }
+    blogs: [{ type: Schema.Types.ObjectId, ref: 'Blog' }]
 });
 
 module.exports = mongoose.model('User', UserSchema);
